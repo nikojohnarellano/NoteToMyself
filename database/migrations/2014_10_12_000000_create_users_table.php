@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('notes');
             $table->string('tbd');
+            $table->string('status')->default('inactive');
             $table->rememberToken();
             $table->timestamps();
         });

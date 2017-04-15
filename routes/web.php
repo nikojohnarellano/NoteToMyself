@@ -18,6 +18,9 @@ Route::group(['middleware' => ['web']], function () {
 
   Auth::routes();
 
+  Route::get('/unlock', 'UnlockController@index');
+  Route::post('/unlock', 'UnlockController@unlock');
   Route::get('/home', 'HomeController@index');
+  Route::get('/activate', 'ActivateController@activate_user');
   Route::post('/save/{user}', 'AppController@index');
 });

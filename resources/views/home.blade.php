@@ -12,7 +12,7 @@
         <div class="col-md-6">
           <h2>Websites</h2>
             @foreach($user->websites as $website)
-              <input type="text" name="websites[]" onclick="window.open(this.value)" value="{{$website->website}}"/><br >
+              <input type="text" name="websites[]" onclick="location.assign('//' + this.value)" value="{{$website->website}}"/><br >
             @endforeach
             <input type="text" name="websites[]" /><br >
             <input type="text" name="websites[]" /><br >
@@ -45,7 +45,13 @@
           <textarea rows="5" cols="70" maxlength="500" id="tbd" name="tbd" style="resize:none;">{{$user->tbd}}</textarea>
         </div>
     </div>
-    <input type="submit" />
+    <br />
+    <div class="row">
+      <div class="col-md-3 col-md-offset-5">
+        <button  type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
   </form>
 </div>
 @endsection

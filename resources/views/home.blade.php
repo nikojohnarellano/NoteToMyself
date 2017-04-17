@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+    use App\User;
+    use Illuminate\Support\Facades\Auth;
+    use App\Http\Requests;
+        $user_id  =  Auth::user()->id;
+        session_start();
+        session_regenerate_id();
+        if ((time() - $_SESSION["timeout"]) > (20 * 60)) {
+            Auth::logout(User::find($user_id));
+            unset($_SESSION["timer"]);
+        }
+@endphp
 <div class="container round-border">
   <form method="POST" action="/save/{{ $user->id }}" enctype="multipart/form-data" >
     <input type="hidden" name="_token" value="{{ csrf_token() }}">

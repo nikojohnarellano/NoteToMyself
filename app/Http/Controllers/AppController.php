@@ -76,12 +76,16 @@ class AppController extends Controller
 
       if($request->has('delete'))
       {
+        $path      = public_path('uploadedimages/' . $user->email);
         $deletes = $request->delete;
 
         foreach($deletes as $delete)
         {
-          Image::where('id', '=', $delete)->delete();
+          $image = Image::where('id', '=', $delete)->get()->first();
+          unlink($path . '/' . $image->image);
+          $image->delete();
         }
+
       }
 
       $user->save();

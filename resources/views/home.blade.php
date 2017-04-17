@@ -30,8 +30,8 @@
           @endif
           @php($count = 0)
           @foreach($user->images as $image)
-            <a href="{{ asset('/uploadedimages/' . $user->email . '/' . $image->image) }}">
-              <img width="100px" length="100px" src="{{ asset('/uploadedimages/' . $user->email . '/' . $image->image) }}" />
+            <a href="{{ public_path('uploadedimages/' . $user->email . '/' . $image->image) }}">
+              <img width="100px" length="100px" src="{{ public_path('uploadedimages/' . $user->email . '/' . $image->image) }}" />
             </a>
             <input type="checkbox" name="delete[]" value="{{ $image->id }}"> delete
             <br />

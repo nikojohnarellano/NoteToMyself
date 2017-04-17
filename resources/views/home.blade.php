@@ -5,6 +5,11 @@
   <form method="POST" action="/save/{{ $user->id }}" enctype="multipart/form-data" >
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
+      <div class="col-md-3 col-md-offset-5">
+        <button  type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+    <div class="row">
         <div class="col-md-3">
           <h2>Notes</h2>
             <textarea rows="25" cols="30" maxlength="500" id="notes" name="notes" style="resize:none;">{{ $user->notes }}</textarea>
@@ -43,11 +48,6 @@
         </div>
     </div>
     <br />
-    <div class="row">
-      <div class="col-md-3 col-md-offset-5">
-        <button  type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
 
   </form>
 </div>

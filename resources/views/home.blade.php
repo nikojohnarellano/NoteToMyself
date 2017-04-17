@@ -12,12 +12,12 @@
         <div class="col-md-3">
           <h2>Websites</h2>
             @foreach($user->websites as $website)
-              <input type="text" name="websites[]" onclick="location.assign('//' + this.value)" value="{{$website->website}}"/><br >
+              <input type="text" name="websites[]" onclick="location.assign('//' + this.value)" value="{{$website->website}}"/><br ><br >
             @endforeach
-            <input type="text" name="websites[]" /><br >
-            <input type="text" name="websites[]" /><br >
-            <input type="text" name="websites[]" /><br >
-            <input type="text" name="websites[]" /><br >
+            <input type="text" name="websites[]" /><br ><br >
+            <input type="text" name="websites[]" /><br ><br >
+            <input type="text" name="websites[]" /><br ><br >
+            <input type="text" name="websites[]" /><br ><br >
         </div>
         <div class="col-md-3">
           <h2>Images</h2>
